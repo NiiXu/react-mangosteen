@@ -1,11 +1,10 @@
 import * as React from 'react'
 import p1 from '../assets/images/welcome1.svg'
-import { NavLink } from 'react-router-dom'
 export const Welcome1: React.FC = () => {
     return (
-        <div>
+        <div  className="text-center">
             <img src={p1}/>
-            <h2 className="text-center">
+            <h2 className="text-32px mt-48px">
                 会挣钱 <br/>
                 还要会省钱
             </h2>

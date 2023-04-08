@@ -21,7 +21,7 @@ export const WelcomeLayout: React.FC = () => {
         from: {transform: location.pathname === '/welcome/1' ? 'translateX(0%)' : 'translateX(100%)'},
         enter: {transform: 'translateX(0%)'},
         leave: {transform: 'translateX(-100%)'},
-        config: {duration: 1000}
+        config: {duration: 300}
     })
     return (
         <div className="bg-#5f34bf h-screen flex flex-col items-stretch pb-16px">
@@ -29,10 +29,10 @@ export const WelcomeLayout: React.FC = () => {
                 <img src={logo}/>
                 <h1 className="text-#D4D4EE">山竹记账</h1>
             </header>
-            <main className="shrink-1 grow-1 bg-white m-16px rounded-8px border flex justify-center items-center">
+            <main className="shrink-1 grow-1  m-16px rounded-8px border ">
                 {
                     transitions((style, pathname) =>
-                        <animated.div key={pathname} style={style}>
+                        <animated.div key={pathname} style={style} className="bg-white w-100% h-100% rounded-8px flex justify-center items-center">
                             {map.current[pathname]}
                         </animated.div>
                     )

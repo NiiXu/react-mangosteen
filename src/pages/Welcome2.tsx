@@ -1,25 +1,13 @@
 import * as React from 'react'
-import styled from 'styled-components';
-
-const Box = styled.div`
-  border: 1px solid red;
-  height: 100px;
-  &:hover {
-    background-color: yellow;
-  }
-`
-const BlueBox = styled(Box)`
-    border: 1px solid blue;
-`
+import p1 from '../assets/images/welcome2.svg'
 export const Welcome2: React.FC = () => {
     return (
-        <div>
-            <Box>
-                山竹记账
-            </Box>
-            <BlueBox>
-                hi
-            </BlueBox>
+        <div  className="text-center">
+            <img src={p1}/>
+            <h2 className="text-32px mt-48px">
+                每日提醒 <br/>
+                不会遗漏每一笔账单
+            </h2>
         </div>
     )
 }
