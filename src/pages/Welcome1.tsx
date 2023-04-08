@@ -1,10 +1,14 @@
 import * as React from 'react'
-import s from './Welcome1.module.scss'
-import c from 'classnames'
+import p1 from '../assets/images/welcome1.svg'
+import { NavLink } from 'react-router-dom'
 export const Welcome1: React.FC = () => {
-  return (
-        <div className={c([s.wrapper,s.blue])}>
-            山竹记账
+    return (
+        <div>
+            <img src={p1}/>
+            <h2>
+                会挣钱 <br/>
+                还要会省钱
+            </h2>
         </div>
-  )
+    )
 }
