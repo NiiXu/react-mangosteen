@@ -38,9 +38,9 @@ export const WelcomeLayout: React.FC = () => {
                     )
                 }
             </main>
-            <footer style={{color: 'white'}} className="shrink-0 text-center text-24px grid grid-cols-3 grid-row-1">
-                <Link style={{gridArea: '1/2/2/3', color: 'white'}} to={linkMap[location.pathname]}>下一页</Link>
-                <Link style={{gridArea: '1/3/2/4', color: 'white'}} to="./welcome/xxx">跳过</Link>
+            <footer style={{color: 'white'}} className="shrink-0 text-center text-white text-24px grid grid-cols-3 grid-row-1">
+                <Link style={{gridArea: '1/2/2/3'}} to={linkMap[location.pathname]}>下一页</Link>
+                <Link style={{gridArea: '1/3/2/4'}} to="./welcome/xxx">跳过</Link>
             </footer>
         </div>
     )
