@@ -1,0 +1,10 @@
+.wrapper{
+  border:1px solid red;
+
+  &:hover{
+    background-color: red;
+  }
+}
+.blue{
+  background: blue;
+}
