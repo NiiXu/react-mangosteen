@@ -4,7 +4,7 @@ import React, {useRef, useState} from 'react'
 import {Link, useLocation, useOutlet} from 'react-router-dom'
 import logo from '../assets/images/logo.svg'
 
-const linkMap = {
+const linkMap: Record<string, string> = {
     '/welcome/1': '/welcome/2',
     '/welcome/2': '/welcome/3',
     '/welcome/3': '/welcome/4',
@@ -18,18 +18,18 @@ export const WelcomeLayout: React.FC = () => {
     const outlet = useOutlet()
     map.current[location.pathname] = outlet
 
-    const [extraStyle,setExtraStyle] = useState({position:'relative'})
+    const [extraStyle, setExtraStyle] = useState<{position: 'relative'|'absolute'}>({position: 'relative'})
 
     const transitions = useTransition(location.pathname, {
         from: {transform: location.pathname === '/welcome/1' ? 'translateX(0%)' : 'translateX(100%)'},
         enter: {transform: 'translateX(0%)'},
         leave: {transform: 'translateX(-100%)'},
         config: {duration: 300},
-        onStart:()=>{
-            setExtraStyle({position:'absolute'})
+        onStart: () => {
+            setExtraStyle({position: 'absolute'})
         },
-        onRest:()=>{
-            setExtraStyle({position:'relative'})
+        onRest: () => {
+            setExtraStyle({position: 'relative'})
         }
     })
     return (
@@ -50,7 +50,8 @@ export const WelcomeLayout: React.FC = () => {
                     )
                 }
             </main>
-            <footer style={{color: 'white'}} className="shrink-0 text-center text-white text-24px grid grid-cols-3 grid-row-1">
+            <footer style={{color: 'white'}}
+                    className="shrink-0 text-center text-white text-24px grid grid-cols-3 grid-row-1">
                 <Link style={{gridArea: '1/2/2/3'}} to={linkMap[location.pathname]}>下一页</Link>
                 <Link style={{gridArea: '1/3/2/4'}} to="./welcome/xxx">跳过</Link>
             </footer>
