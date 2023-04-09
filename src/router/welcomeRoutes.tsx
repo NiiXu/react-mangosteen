@@ -4,10 +4,12 @@ import {Welcome2} from '../pages/Welcome2';
 import {Welcome3} from '../pages/Welcome3';
 import {Welcome4} from '../pages/Welcome4';
 import React from 'react';
+import {RouteObject} from 'react-router-dom';
 
-export const welcomeRoutes =    {
+export const welcomeRoutes: RouteObject = {
     path: 'welcome',
     element: <WelcomeLayout/>,
+    errorElement:<div>加载失败</div>,
     children: [
         {
             path: '1',
