@@ -6,19 +6,23 @@ import {Welcome1} from '../pages/Welcome1';
 import {Welcome2} from '../pages/Welcome2';
 import {Welcome3} from '../pages/Welcome3';
 import {Welcome4} from '../pages/Welcome4';
+import {Home} from '../pages/home';
+import {WelcomeLayout} from '../layout/WelcomeLayout';
 
 
 export const router = createBrowserRouter([
-    {
-        path:'/home',
-        element:<div>home</div>
-    },
     {
         path:'/',
         element:<Root/>
     },
     {
+        path:'/home',
+        element:<Home/>
+    },
+
+    {
         path: '/welcome',
+        element: <WelcomeLayout />,
         errorElement: <NotFoundPage/>,
         children: [
             {
