@@ -7,9 +7,12 @@ import Unocss from 'unocss/vite'
 // https://vitejs.dev/config/
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
+    define:{
+      isDev: command === 'serve',
+    },
     plugins: [
-      react(),
       Unocss(),
+      react(),
       viteMockServe(),
     ],
   }
