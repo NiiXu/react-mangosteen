@@ -4,8 +4,12 @@ import p from '../assets/images/pig.svg'
 import add from '../assets/icons/add.svg'
 import useSWR from 'swr'
 import {ajax} from '../lib/ajax';
-export const Home: React.FC = () => {
-    //当前用户 单数类型resource
+import { useTitle } from '../hooks/useTitle'
+interface Props {
+    title?: string
+}
+export const Home: React.FC<Props> = (props) => {
+    useTitle(props.title)
     const { data: meData, error: meError } =
         useSWR('/api/v1/me', async path =>
         (await ajax.get<Resource<User>>(path)).data.resource)
